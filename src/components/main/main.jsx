@@ -7,6 +7,7 @@ import Products from "../products/products";
 import UserInfo from "../userInfo/userInfo";
 import Favorites from "../favorites/favorites";
 import Offers from "../offers/offers";
+import ProductDetail from "../product-detail/productDetail";
 const Main = () => (
     <main>
         <Switch>
@@ -17,6 +18,7 @@ const Main = () => (
             <Route exact path="/userInfo" component={UserInfo} />
             <Route exact path="/favorites" component={Favorites} />
             <Route exact path="/offers" component={Offers} />
+            <Route exact path="/product-detail" component={ProductDetail} />
         </Switch>
     </main>
 );

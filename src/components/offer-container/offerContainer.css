@@ -1,0 +1,21 @@
+.border-box {
+  border: 1px #ddd solid;
+}
+.discount-container {
+  top: 0;
+  left: 0;
+  padding: 1%;
+  width: 20%;
+  background-color: red;
+  color: white;
+}
+.offerContainer .row {
+  margin:2.5%!important;
+}
+.price-value {
+    color: red;
+    font-weight: bold;
+}
+.alert-text {
+    color: red;
+}

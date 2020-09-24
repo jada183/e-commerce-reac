@@ -14,6 +14,7 @@ body {
 main {
     flex: 1 0 auto;
     min-height: 170vh;
+    margin: 5%;
 }
 #content  {
     width: 100%;
@@ -59,16 +60,12 @@ footer .container-fluid {
     color: white;
     height: 60px;
 }
-/*  **/
-.main-containter {
-    margin: 5%;
-}
 /* Menu container **/
 .menu-container {
     margin: 5% 0;
 }
-/* Generics styles **
-.text-aling-center {
+/* Generics styles **/
+.text-align-center {
     text-align: center;
 }
 
@@ -86,11 +83,14 @@ input {
 .page-info-title {
   text-align: center;
 }
+.position-relative {
+  position: relative;
+}
 
 /** IMAGES AND ICONS**/
 @media screen and ( max-width: 992px ) {
     img.responsive-offer { height:160px; }
-    img.reponsive-category { height: 260px ;}
+    img.reponsive-category { height: 160px ;}
     img.responsive-product-detail { height: 320px;}
     img.caddy-item-image { height: 80%;}
 
