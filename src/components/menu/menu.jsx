@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './menu.css';
 const Menu = () => (
-    <div class="menu-content">
+    <div className="menu-content">
         <Link to="/products">
             <h5>Productos</h5>
         </Link>
