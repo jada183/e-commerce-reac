@@ -5,6 +5,7 @@ import companyLogo from '../../assets/icons/logo_small.png'
 import sponsorLogo from '../../assets/images/plexus-logo.png';
 import PropTypes from 'prop-types';
 import './header.css';
+import { Link } from "react-router-dom";
 const Header = ({ toggleSidebar }) => (
 
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,16 +20,17 @@ const Header = ({ toggleSidebar }) => (
                         className="menu-logo"
                     />
                 </button>
-                <button type="button" className="btn">
-                    <img
-                        src={companyLogo}
-                        width="auto"
-                        height="30px"
-                        alt="logo de la tienda"
-                        className="company-logo"
-                    />
-                </button>
-
+                < Link to="/">
+                    <button type="button" className="btn">
+                        <img
+                            src={companyLogo}
+                            width="auto"
+                            height="30px"
+                            alt="logo de la tienda"
+                            className="company-logo"
+                        />
+                    </button>
+                </Link>
             </div>
             <div className="banner-container">
                 <a href="https://www.linkedin.com/company/plexus-tech">
@@ -44,21 +46,24 @@ const Header = ({ toggleSidebar }) => (
             </div>
             <div className="actionHeaderButtonsContainer">
 
-                {/* <button className="btn button-userInfo header-button">
+                {/*< Link to="/userInfo"> 
+                    <button className="btn button-userInfo header-button">
+                            <div>
+                                <div className="nameHeaderTitle">Hola</div>
+                                <div>Mi cuenta</div>
+                            </div>
+                        </button> 
+                    </Link>*/}
+
+                < Link to="/login">
+                    <button className="btn button-userInfo header-button">
                         <div>
-                            <div className="nameHeaderTitle">Hola</div>
-                            <div>Mi cuenta</div>
+                            <div>Iniciar sesión</div>
                         </div>
-                    </button> */}
+                    </button>
+                </Link>
 
-
-                <button className="btn button-userInfo header-button">
-                    <div>
-                        <div>Iniciar sesión</div>
-                    </div>
-                </button>
-
-
+                < Link to="/caddy"> 
                 <button className="btn header-button">
                     <img
                         src={caddyImage}
@@ -69,6 +74,7 @@ const Header = ({ toggleSidebar }) => (
                     />
                     <span>Mi carrito</span>
                 </button>
+                </Link>
 
             </div>
         </div>
