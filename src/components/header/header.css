@@ -1,0 +1,32 @@
+.nameHeaderTitle {
+  font-size: 0.8rem;
+}
+.button-userInfo {
+  text-align: left;
+}
+.button-userInfo:hover {
+  border: 2px solid lightblue;
+}
+.banner-text {
+  font-family: cursive;
+  color: #05055E;
+}
+.banner-container {
+  border: 1px solid darkblue;
+  border-radius: 4px;
+  padding: 5px;
+}
+.banner-container:hover{
+  background-color: lightblue;
+}
+@media screen and (max-width: 991px ) {
+  
+  .MenuAndLogoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start!important;
+  }
+  .actionHeaderButtonsContainer {
+    display: flex;
+  }
+}
