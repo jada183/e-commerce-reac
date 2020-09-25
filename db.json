@@ -105,7 +105,7 @@
         {
             "id": 7,
             "name": "Apple iPhone 11 128GB Blanco Libre",
-            "image": "_nuxt/static/img/mobile1.png",
+            "image": "https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/041960_00_1.jpg",
             "price": 850,
             "discount": null,
             "brand": "Apple",
@@ -122,7 +122,7 @@
         {
             "id": 8,
             "name": "Samsung Galaxy S8",
-            "image": "_nuxt/static/img/mobile2.png",
+            "image": "https://img.pccomponentes.com/articles/26/261928/samsung-galaxy-s20-8-128-gb-cloud-blue-libre.jpg",
             "price": 698,
             "discount": null,
             "brand": "Samsung",
@@ -139,7 +139,7 @@
         {
             "id": 9,
             "name": "Samsung Galaxy S7",
-            "image": "_nuxt/static/img/mobile3.png",
+            "image": "https://img.pccomponentes.com/articles/26/261928/samsung-galaxy-s20-8-128-gb-cloud-blue-libre.jpg",
             "price": 498,
             "discount": 30,
             "brand": "Samsung",
@@ -156,7 +156,7 @@
         {
             "id": 10,
             "name": "Samsung Galaxy S9",
-            "image": "_nuxt/static/img/mobile3.png",
+            "image": "https://img.pccomponentes.com/articles/26/261928/samsung-galaxy-s20-8-128-gb-cloud-blue-libre.jpg",
             "price": 998,
             "discount": null,
             "brand": "Samsung",
@@ -173,7 +173,7 @@
         {
             "id": 11,
             "name": "LUMAR Ordenador Sobremesa/Intel Core i7 Up to 4×3,9Ghz / 16GB RAM / 480GB SSD + 3TB",
-            "image": "_nuxt/static/img/desk1.png",
+            "image": "https://informaticalumar.com/wp-content/uploads/2019/11/caja-gaming-rgb-deepabyss-frontal-600x600.jpg",
             "price": 629,
             "discount": null,
             "brand": "Nox",
@@ -190,7 +190,7 @@
         {
             "id": 12,
             "name": "ordenador Pc Gaming de Sobremesa Torre Devil Roja ",
-            "image": "_nuxt/static/img/desk2.png",
+            "image": "https://www.worten.es/i/9ebc100429dc36d55bdd7b55785a820fa836ed7c.jpg",
             "price": 729,
             "discount": 35,
             "brand": "Red devil",
@@ -207,7 +207,7 @@
         {
             "id": 13,
             "name": "LUMAR Ordenador Sobremesa/Intel Core i5 Up to 4×3,9Ghz / 16GB RAM / 480GB SSD + 3TB",
-            "image": "_nuxt/static/img/desk1.png",
+            "image": "https://informaticalumar.com/wp-content/uploads/2019/11/caja-gaming-rgb-deepabyss-frontal-600x600.jpg",
             "price": 529,
             "discount": 20,
             "brand": "r",
@@ -224,7 +224,7 @@
         {
             "id": 14,
             "name": "ordenador Pc Gaming de Sobremesa Torre Devil Roja ",
-            "image": "_nuxt/static/img/desk2.png",
+            "image": "https://www.worten.es/i/9ebc100429dc36d55bdd7b55785a820fa836ed7c.jpg",
             "price": 729,
             "discount": null,
             "brand": "Red devil",
