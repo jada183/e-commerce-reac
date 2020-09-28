@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import OfferContainer from "../offer-container/offerContainer";
-
+import { withRouter } from 'react-router-dom';
 
 const initialOfferList = [];
 
-const Products = () => {
+const Products = ({ match }) => {
     
     const parseType = (type) => {
         switch (type) {
@@ -24,6 +24,7 @@ const Products = () => {
             }
         }
     }
+    
     const updateFilterCategory = (type) =>  {
         return type ? "categoria" : "nombre";
     }
@@ -33,10 +34,14 @@ const Products = () => {
     const optionsList = ["nombre", "categoria", "marca"];
     const [filterCategory, setFilterCategory] = useState(updateFilterCategory(new URLSearchParams(window.location.search).get('type')));
     useEffect(() => {
-        console.log('USE EFFECT');
+        setNewSearchValue(parseType(new URLSearchParams(window.location.search).get('type')));
         setSearchQuery(new URLSearchParams(window.location.search).get('type'));
         getProduct(searchValue, filterCategory);
-    }, [searchQuery])
+    }, [match]);
+    useEffect(() => {
+        setNewSearchValue(parseType(new URLSearchParams(window.location.search).get('type')));
+        getProduct(searchValue, filterCategory);
+    }, [searchQuery]);
     const getProduct = (searchValue, filterCategory) => {
         let parameters = {};
         if (searchValue) {
@@ -184,4 +189,4 @@ const Products = () => {
 }
 
 
-export default Products
+export default withRouter(Products);
