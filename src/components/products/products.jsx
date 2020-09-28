@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import OfferContainer from "../offer-container/offerContainer";
-import { withRouter } from 'react-router-dom';
+
 
 const initialOfferList = [];
 
@@ -36,10 +36,9 @@ const Products = ({ match }) => {
     useEffect(() => {
         setNewSearchValue(parseType(new URLSearchParams(window.location.search).get('type')));
         setSearchQuery(new URLSearchParams(window.location.search).get('type'));
-        getProduct(searchValue, filterCategory);
+        setFilterCategory(updateFilterCategory(new URLSearchParams(window.location.search).get('type')))
     }, [match]);
     useEffect(() => {
-        setNewSearchValue(parseType(new URLSearchParams(window.location.search).get('type')));
         getProduct(searchValue, filterCategory);
     }, [searchQuery]);
     const getProduct = (searchValue, filterCategory) => {
@@ -161,7 +160,7 @@ const Products = ({ match }) => {
                     onChange={e => setNewSearchValue(e.target.value)}
                 />
                 <button className="btn btn-light col-lg-2 col-12 mb-2"
-                    onClick={() => searchProducts(searchValue, filterCategory)}
+                    onClick={() => getProduct(searchValue, filterCategory)}
                 >Buscar</button>
             </div >
             <div className="row mb-2">
@@ -189,4 +188,4 @@ const Products = ({ match }) => {
 }
 
 
-export default withRouter(Products);
+export default Products;
