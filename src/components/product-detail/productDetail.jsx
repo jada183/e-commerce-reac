@@ -3,8 +3,11 @@ import redHeart from '../../assets/icons/corazon-rojo.svg'
 import grayHeart from  '../../assets/icons/corazon-gris.svg';
 import caddyImg from '../../assets/icons/carro-inteligente.png';
 import axios from "axios";
+import Quantity from '../quantity/quantity';
+
 const ProductDetail = () => {
     const [product, setProduct] = useState('');
+    const [quantity, setQuantity] = useState(1);
     useEffect(() => {
         axios({
             method: "GET",
@@ -62,7 +65,10 @@ const ProductDetail = () => {
                 </div>
                 <div className="row mt-3">
                     <b className="col-lg-2 col-6">Cantidad:</b>
-                    {/* <quantity className="offset-lg-2 col-6 offset-0 col-lg-4" v-bind: quantity="quantity" /> */}
+                    <div className="offset-lg-2 col-6 offset-0 col-lg-4">
+                            <Quantity  quantity={quantity} onQuantityChange={e => setQuantity(e)} />
+                    </div>
+                        
                 </div>
                 <div className="row mt-3">
                     <b className="col-lg-2 col-6">Disponibilidad</b>
@@ -125,4 +131,5 @@ const ProductDetail = () => {
     </div>
   </div >
   )}
+
 export default ProductDetail
