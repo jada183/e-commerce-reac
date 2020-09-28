@@ -6,22 +6,23 @@ import laptopImg from "../../assets/images/laptop.png"
 import mobileImg from "../../assets/images/mobiles.png";
 import computerDesk from "../../assets/images/sobremesa.png"
 import OfferContainer from "../offer-container/offerContainer";
+import axios from "axios";
 const initialOfferList = [];
-const Home = () =>{
+const Home = () => {
     const [offerList, setOfferList] = useState(initialOfferList)
     useEffect(() => {
-        fetch("http://localhost:3001/products")
-            .then(res => res.json())
+        axios({
+            method: "GET",
+            url: "http://localhost:3001/products",
+            params: {},
+            headers: {}
+        })
+            .then(response => response.data)
             .then(response => response.filter(r => r.discount > 0))
             .then(response => response.sort((a, b) => (a.discount < b.discount) ? 1 : ((b.discount < a.discount) ? -1 : 0)).slice(0, 4))
-            .then(
-                (result) => {
-                   setOfferList(result);
-                },
-                (error) => {
-                    console.log(error);
-                }
-            )
+            .then(response => {
+                setOfferList(response);
+            });
     }, [])
     return (
         <div className="container">
@@ -104,7 +105,8 @@ const Home = () =>{
                     ))}
             </div>
         </div >
-)};
+    )
+};
 
 // Home.propsTypes = {
 //     offerList: PropTypes.arrayOf(PropTypes.shape(OfferContainer.propTypes))
