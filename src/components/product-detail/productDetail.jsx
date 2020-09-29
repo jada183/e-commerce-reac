@@ -43,10 +43,10 @@ const ProductDetail = () => {
                     <h5 className="col-12">{product.name }</h5>
                 </div>
                 <div className="row mt-3">
-                    <h1 className="price col-4">{ product.price } €</h1>
+                    <h1 className="price col-lg-4 col-6">{ product.price } €</h1>
                     {(() => {
                         if (product.discount) {
-                            return <div className="col-2">
+                            return <div className="col-lg-2 col-4">
                                         <div className="text-aling-center">
                                             <span>Dto</span>
                                         </div>
@@ -83,29 +83,29 @@ const ProductDetail = () => {
                     
                 </div>
                 <div className="row mt-5">
-                    <div className="col-2">
+                    <div className="col-lg-2 col-4">
                         <button className="favoriteButton"
                                 onClick={e => setFavorite(!favorite)}>
                         {(() => {
                             if (favorite) {
                                 return <img
                                     src={ redHeart }
-                                    width="80%"
-                                    height="80%"
+                                    width="45px"
+                                    height="45px"
                                     alt="Corazón rojo"
                                 />
                             } else {
                                 return <img
                                     src={ grayHeart}
-                                    width="80%"
-                                    height="80%"
+                                    width="45px"
+                                    height="45px"
                                     alt="Corazón gris"
                                 />
                             }
                         })()}
                         </button>
                 </div>
-                <button className="btn btn-primary col-6 offset-1">
+                <button className="btn btn-primary col-lg-6 offset-lg-1 col-8">
                     <img
                         src={caddyImg}
                         width="25px"
