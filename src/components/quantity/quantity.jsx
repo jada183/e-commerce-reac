@@ -17,6 +17,11 @@ const Quantity = ({ quantity, onQuantityChange}) => {
             onQuantityChange(value);
         }
     }
+    const checkQuantityValue = (value) => {
+        if (value === '') {
+            onQuantityChange(1);
+        }
+    }
     return (
         <div className="row">
         <button className="btn btn-light col-3"  onClick={e => rest()}>-</button>
@@ -24,10 +29,8 @@ const Quantity = ({ quantity, onQuantityChange}) => {
             type="text"
             className="form-control col-4"
             value={quantity}
-                onChange={e => changeQuantityValue(e.target.value)}
-            // v-focus
-            // v-on: blur="adjustValue()"
-            // @change="adjustValue()"
+            onChange={e => changeQuantityValue(e.target.value)}
+            onBlur={e => checkQuantityValue(e.target.value)}
         />
         <button className="btn btn-light col-3" onClick={e => sum()}>+</button>
   </div >
