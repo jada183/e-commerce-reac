@@ -91,7 +91,7 @@ input {
 @media screen and ( max-width: 992px ) {
     img.responsive-offer { height:160px; }
     img.reponsive-category { height: 160px ;}
-    img.responsive-product-detail { height: 320px;}
+    img.responsive-product-detail { height: 160px;}
     img.caddy-item-image { height: 80%;}
 
     img.caddy-button {

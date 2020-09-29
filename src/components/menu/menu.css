@@ -1,8 +1,8 @@
-ul {
+.menu-content ul {
     padding-left: 0;
 }
 
-li {
+.menu-content li {
     color: white;
     display: flex;
     padding-left: 40px;
@@ -11,7 +11,7 @@ li {
     margin-bottom: 4%;
     cursor: pointer;
 }
-li:hover {
+.menu-content li:hover {
     background-color: darkblue;
 }
 .menu-content h5 {
@@ -22,15 +22,15 @@ li:hover {
 .menu-content {
     justify-content: center;
 }
-a {
+.menu-content a {
     text-decoration: none !important;
     color: black!important;
 }
 @media screen and ( max-width: 991px ) { 
-    li {
+    .menu-content li {
         font-size: 1.5em;
     }
-    h5 {
+    .menu-content h5 {
         font-size:1.8em;
     }
 }

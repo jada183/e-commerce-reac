@@ -90,55 +90,6 @@ const Products = ({ match }) => {
                 setOfferList(response);
             });
     }
-    const searchProducts = (searchValue, filterCategory) => {
-        let parameters = {};
-        if (searchValue) {
-            switch (filterCategory) {
-                case "nombre": {
-                    parameters = { name: searchValue };
-                    break;
-                }
-                case "categoria": {
-                    switch (searchValue) {
-                        case "portatiles": {
-                            parameters = { category: "laptop" };
-                            break;
-                        }
-                        case "sobremesa": {
-                            parameters = { category: "desk" };
-                            break;
-                        }
-                        case "moviles": {
-                            parameters = { category: "mobile" };
-                            break;
-                        }
-                        default: {
-                            parameters = {};
-                        }
-                    }
-
-                    break;
-                }
-                case "marca": {
-                    parameters = { brand: searchValue };
-                    break;
-                }
-                default: {
-                    break;
-                }
-            }
-        }
-        return axios({
-            method: "GET",
-            url: "http://localhost:3001/products",
-            params: parameters,
-            headers: {}
-        })
-            .then(response => response.data)
-            .then(response => {
-                setOfferList(response);
-            });
-    }
     return (
         <div className="container">
             <div className="row justify-content-center mb-5">
