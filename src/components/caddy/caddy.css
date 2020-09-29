@@ -1,0 +1,11 @@
+.item-title-img-container {
+  display: flex;
+}
+.remove-item-cross {
+  cursor: pointer;
+  color: red;
+}
+
+.remove-item-cross:hover {
+  text-decoration: underline;
+}
