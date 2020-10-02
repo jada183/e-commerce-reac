@@ -22,10 +22,7 @@
 .menu-content {
     justify-content: center;
 }
-.menu-content a {
-    text-decoration: none !important;
-    color: black!important;
-}
+
 @media screen and ( max-width: 991px ) { 
     .menu-content li {
         font-size: 1.5em;
