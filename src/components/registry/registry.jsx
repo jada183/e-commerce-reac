@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './registry.css'
 const Registry = () => {
     const [username, setUsername] = useState('');
+    const [name, setname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
@@ -26,6 +27,16 @@ const Registry = () => {
                         className="col-lg-8 offset-lg-2 col-10 offset-1 form-control"
                         onChange={e => setUsername(e.target.value)} 
                         value={username}
+                    />
+                </div>
+                <div className="row">
+                    <input
+                        type="text"
+                        placeholder="* Nombre"
+                        id="name"
+                        className="col-lg-8 offset-lg-2 col-10 offset-1 form-control"
+                        onChange={e => setname(e.target.value)}
+                        value={name}
                     />
                 </div>
                 <div className="row">
