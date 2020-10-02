@@ -71,7 +71,7 @@ const Caddy = () => {
                                 <span className="col-lg-2 col-4 no-show-mobile">{ price }€</span>
                                 <span className="col-lg-2 col-4 offset-4 offset-lg-0">
                                     <Quantity quantity={quantity} onQuantityChange={e => { 
-                                        const updateproductList = [... productList];
+                                        const updateproductList = [...productList];
                                         updateproductList[i].quantity = e;
                                         setProductList(updateproductList);
                                         let total = 0;

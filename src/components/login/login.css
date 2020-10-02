@@ -1,0 +1,11 @@
+.login-box {
+  border: 1px #ddd solid;
+  border-radius: 4px;
+  padding-left: -15px;
+  padding-right: -15px;
+  padding-top: 4%;
+  padding-bottom: 2%;
+}
+.login-box .row {
+  margin-bottom: 5%;
+}

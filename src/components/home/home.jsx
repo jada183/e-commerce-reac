@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
-import PropTypes from 'prop-types';
 import laptopImg from "../../assets/images/laptop.png"
 import mobileImg from "../../assets/images/mobiles.png";
 import computerDesk from "../../assets/images/sobremesa.png"
