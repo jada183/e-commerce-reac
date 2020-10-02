@@ -89,6 +89,10 @@ input {
 .align-center {
   text-align: center;
 }
+ a {
+    text-decoration: none !important;
+    color: black!important;
+}
 /** IMAGES AND ICONS**/
 @media screen and ( max-width: 992px ) {
     img.responsive-offer { height:160px; }
