@@ -8,6 +8,7 @@ import UserInfo from "../userInfo/userInfo";
 import Favorites from "../favorites/favorites";
 import Offers from "../offers/offers";
 import ProductDetail from "../product-detail/productDetail";
+import Registry from "../registry/registry";
 const Main = () => (
     <main>
         <Switch>
@@ -19,6 +20,7 @@ const Main = () => (
             <Route exact path="/favorites" component={Favorites} />
             <Route exact path="/offers" component={Offers} />
             <Route exact path="/product-detail" component={ProductDetail} />
+            <Route exact path="/registry" component={Registry} />
         </Switch>
     </main>
 );
