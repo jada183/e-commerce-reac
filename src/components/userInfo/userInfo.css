@@ -1,0 +1,17 @@
+.user-info-form-container {
+  border: 1px #ddd solid;
+  border-radius: 4px;
+  padding-left: -15px;
+  padding-right: -15px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.user-info-form-container .row {
+    margin-bottom: 5%;
+}
+
+.user-info-form-container input:disabled {
+  border: none;
+  color: black;
+  background-color: white !important;
+}
