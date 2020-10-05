@@ -1,10 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import axios from "axios";
 import './login.css'
+import { changeUser } from "../../store/userReducer";
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const dispatch = useDispatch();
     const login = () => {
+        axios({
+            method: "GET",
+            url: "http://localhost:3001/users",
+            params: {
+                username: username,
+                password: password
+            },
+            headers: {}
+        })
+        .then(response =>  response.data[0])
+        .then(response => {
+            if (response !== undefined) {
+               setError('');
+                dispatch(changeUser(response));
+            } else {
+                setError('Usuario o contraseña incorrecta');
+            }
+            
+        });
     }
     return (
         <div className="container">
@@ -26,7 +50,16 @@ const Login = () => {
                 </div>
                 <div className="row">
                     <button className="btn btn-light offset-2 col-8" onClick={e => login()}>Iniciar sesión</button>
-            </div>
+                </div>
+                {(
+                    () => {
+                        if (error) {
+                            return <div className="row">
+                                <span className="align-center error-text col-12 col-lg-6 offset-lg-3">{error}</span>
+                            </div>
+                        }
+                    }
+                )()}
             <hr className="registry-separator" />
             <div className="row">
                 <div className="col-lg-6 col-12 offset-lg-3 align-center">
