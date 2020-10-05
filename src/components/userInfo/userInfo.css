@@ -9,3 +9,9 @@
 .user-info-form-container .row {
     margin-bottom: 5%;
 }
+
+.user-info-form-container input:disabled {
+  border: none;
+  color: black;
+  background-color: white !important;
+}
