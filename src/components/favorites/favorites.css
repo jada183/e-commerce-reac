@@ -1,0 +1,21 @@
+.favorites .table-header {
+  padding: 0.75rem;
+}
+.favorites .content-row {
+     padding: 0.75rem;
+}
+.favorites .table-container{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5%;
+}
+.favorites .remove-item {
+    cursor: pointer;
+    color: red;
+}
+.favorites .remove-item:hover {
+    text-decoration: underline;
+}
+.favorites .last-column {
+    display: flex;
+    justify-content: flex-end;
+}
