@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './userInfo.css';
 const UserInfo = () => {
     const [name, setName] = useState('');
     const [disabledName, setDisabledName] = useState(true);
@@ -7,7 +8,6 @@ const UserInfo = () => {
     const [phone, setPhone] = useState('');
     const [disabledPhone, setDisabledPhone] = useState(true);
     const [password, setPassword] = useState('');
-    const [repeatedPassword, setRepeteadPassword] = useState('');
     const [changePassword, setChangePassword] = useState(false);
     const [newPassword, setNewPassword] = useState('');
     const [repeatedNewPassword, setRepeatedNewPassword] = useState('');
@@ -19,17 +19,26 @@ const UserInfo = () => {
             setChangePassword(false);
             setPasswordError('');
             setPassword(newPassword);
-            // cleanChangePasswordFields();
+            cleanChangePasswordField();
         } else {
             setPasswordError('Las contraseñas no coinciden');
         }
+    };
+    const cancelChangePassword = () => {
+        cleanChangePasswordField();
+        setPasswordError('');
+        setChangePassword(false);
+    };
+    const cleanChangePasswordField = () => {
+        setNewPassword('');
+        setRepeatedNewPassword('');
     };
     return(
         <div className="container">
             <div className="row justify-content-center">
                 <h3 className="col-12 page-info-title">Datos de usuario</h3>
             </div>
-            <div className="form-container col-12  offset-lg-2 col-lg-8 ">
+            <div className="user-info-form-container col-12  offset-lg-2 col-lg-8 ">
                 <div className="row">
                     <label htmlFor="name" className="col-lg-2 offset-lg-1  col-12 offset-0">Nombre:</label>
                     <input
@@ -115,57 +124,63 @@ const UserInfo = () => {
       </div >
     {(
         () => {
-            if (!changePassword) {
-                return <div className="row">
-                    <label htmlFor="password" className="col-lg-2 offset-lg-1 col-12 offset-0">Contraseña:</label>
-                    <input
-                        type="password"
-                        placeholder="contraseña...."
-                        id="password"
-                        className="col-lg-5 col-8 form-control"
-                        value={password}
-                        disabled="true"
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                    <button
-                        className="btn btn-light offset-lg-1 col-lg-2 col-4"
-                        onClick={setChangePassword(true)}
-                    >Editar</button>
-                </div >
-                } else {
-                    return <div>
-                            <div className="row">
-                                <label htmlFor="newPassword" className="col-lg-2 offset-lg-1 col-12 offset-0">Nueva contraseña:</label>
-                                <input
-                                    type="password"
-                                    placeholder="contraseña...."
-                                    id="newPassword"
-                                    className="col-lg-5 col-8 form-control"
-                                    value={newPassword}
-                                    onChange={e => setNewPassword(e.target.value)}
-                                />
-                                <button className="btn btn-light offset-lg-1 col-lg-2 col-4" onClick={e => setChangePassword(false)} tabindex="-1">Cancelar</button>
-                            </div >
-                            <div className="row">
-                                <label htmlFor="repeatedNewPassword" className="col-lg-2 offset-lg-1 col-12 offset-0">Repita contraseña:</label>
-                                <input
-                                    type="password"
-                                    placeholder="contraseña...."
-                                    id="repeatedNewPassword"
-                                    className="col-lg-5 col-8 form-control"
-                                    onChange={e => setRepeatedNewPassword(e.target.value)}
-                                    value={repeatedNewPassword}
-                                />
-                                <button className="btn btn-light offset-lg-1 col-lg-2 col-4" onClick={e => changePasswordEvent()}>Guardar</button>
-                            </div >
-                    </div>
+            if (changePassword) {
+                return (<div>
+                    <div className="row">
+                        <label htmlFor="newPassword" className="col-lg-2 offset-lg-1 col-12 offset-0">Nueva contraseña:</label>
+                        <input
+                            type="password"
+                            placeholder="contraseña...."
+                            id="newPassword"
+                            className="col-lg-5 col-8 form-control"
+                            value={newPassword}
+                            onChange={e => setNewPassword(e.target.value)}
+                        />
+                        <button className="btn btn-light offset-lg-1 col-lg-2 col-4" onClick={e => cancelChangePassword()} tabIndex="-1">Cancelar</button>
+                    </div >
+                    <div className="row">
+                        <label htmlFor="repeatedNewPassword" className="col-lg-2 offset-lg-1 col-12 offset-0">Repita contraseña:</label>
+                        <input
+                            type="password"
+                            placeholder="contraseña...."
+                            id="repeatedNewPassword"
+                            className="col-lg-5 col-8 form-control"
+                            onChange={e => setRepeatedNewPassword(e.target.value)}
+                            value={repeatedNewPassword}
+                        />
+                        <button className="btn btn-light offset-lg-1 col-lg-2 col-4" onClick={e => changePasswordEvent()}>Guardar</button>
+                    </div >
+                </div>);
+               
+            } else  {
+                    return (<div className="row">
+                            <label htmlFor="password" className="col-lg-2 offset-lg-1 col-12 offset-0">Contraseña:</label>
+                            <input
+                                type="password"
+                                placeholder="contraseña...."
+                                id="password"
+                                className="col-lg-5 col-8 form-control"
+                                value={password}
+                                disabled={true}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <button
+                                className="btn btn-light offset-lg-1 col-lg-2 col-4"
+                                onClick={e => setChangePassword(true)}
+                            >Editar</button>
+                        </div >);
                 }
             }
         )()}
-                          
-    {/* <div className="row" v-if="passwordError">
-        <span className="error-text offset-md-1 col-md-11">- { passwordError }</span>
-    </div> */}
+        {(
+            () => {
+                if (passwordError) {
+                    return <div className="row" v-if="passwordError">
+                        <span className="error-text offset-md-1 col-md-11">- {passwordError}</span>
+                    </div>
+                }
+            }
+        )()}                
     </div >
   </div >
     )
